@@ -55,9 +55,9 @@ void dfs(node* root,int level){
         dfs(root->right,level+1);
    }
 }
-void huffuman(int* a){
+void huffuman(int* a){//建立哈夫曼编码的二叉树
     node *root,fir,sec;
-    for(int i=0;i<28;i++){
+    for(int i=0;i<28;i++){//对每个字符生成一个节点，并压入队列
         if(a[i]!=0){
         root=(node*)malloc(sizeof(node));
         root->c=ch[i];
@@ -67,7 +67,7 @@ void huffuman(int* a){
         p.push(*root);
         }
     }
-    while(p.size()>1){
+    while(p.size()>1){//每次选择最小的两个节点，合并
         fir=p.top();p.pop();
         sec=p.top();p.pop();
        // cout<<"fir:"<<fir.weight<<"sec:"<<sec.weight<<endl;
