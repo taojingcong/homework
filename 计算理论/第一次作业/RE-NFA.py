@@ -325,7 +325,11 @@ class regex(object):
 
 
 if __name__ == '__main__':
-    r: str = r'(ab*a|ab(a)*)(a|b*)'
+    # r: str = r'(ab*a|ab(a)*)(a|b*)'
+    r=""
+    with open("re",'r') as f:
+        r=f.readline()
+    print(r)
     pattern = regex(r)
     a = pattern.compile()
     print('NFA corresponding to given regular expression "' + r + '" is:')
