@@ -281,7 +281,7 @@ class regex(object):
                 """
                 如果当前输入符号是左括号（，直接自增括号层级，并入栈当前的连接标志，无需其他操作
                 """
-                concat_stack.append(current_concat_flag)
+                concat_stack.append(current_concat_flag)#
                 current_level = current_level + 1
                 current_concat_flag = current_concat_flag + 1
                 continue
