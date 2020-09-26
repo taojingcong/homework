@@ -89,7 +89,7 @@ class nfa(object):
         n_alpha: set = a1.alpha.union(a2.alpha).union(EPSILON)
         n_start_state: state = a1.start_state
         n_final_states: set = a2.final_states
-        for s in a1.final_states:
+        for s in a1.final_states:#连接a2的初态和a1的终态
             s.append(alphabet=EPSILON, succ=a2.start_state)
         n_all_states: set = a1.all_states.union(a2.all_states)  # 应当先连接a1的终态和a2的初态，先进行union操作会使这部分连接无法更新到所需的新NFA中
         return nfa(all_states=n_all_states, alpha=n_alpha, start_state=n_start_state, final_states=n_final_states)
